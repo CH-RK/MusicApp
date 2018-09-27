@@ -1,44 +1,24 @@
 <div class="container">
-  <h2>Contextual Classes</h2>
-  <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
+  <h2><a href="">Tracks</a></h2>
+  <p>Latest Tracks & Latest Melodies & Latest Mp3 & Latest Pop Songs.</p>
   <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>Track Name</th>
+        <th>Movie Name</th>
+        <th>Download Link</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Default</td>
-        <td>Defaultson</td>
-        <td>def@somemail.com</td>
-      </tr>      
-      <tr class="success">
-        <td>Success</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr class="danger">
-        <td>Danger</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr class="info">
-        <td>Info</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-      <tr class="warning">
-        <td>Warning</td>
-        <td>Refs</td>
-        <td>bo@example.com</td>
-      </tr>
-      <tr class="active">
-        <td>Active</td>
-        <td>Activeson</td>
-        <td>act@example.com</td>
+      <tr *ngFor="let track of trackData" [ngClass]="{
+      'success':track.moviename === 'Latest Telugu Rip',
+      'warning':track.DownloadLink === 'https://www.atozmp3.co.in',
+      'danger':track.moviename === 'Latest Bengali Rip',
+      'info':track.trackname === 'Hindi Songs',
+      'active':track.trackname ==='Punjab Songs'}">
+        <td>{{track.trackname}}</td>
+        <td>{{track.moviename}}</td>
+        <td><a href="#">{{track.DownloadLink}}</a></td>
       </tr>
     </tbody>
   </table>

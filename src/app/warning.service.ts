@@ -25,4 +25,7 @@ export class WarningService {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
+  tracklist(){
+    return this.http.get("https://api.myjson.com/bins/13qufw");
+  }
 } 
